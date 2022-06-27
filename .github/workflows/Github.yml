@@ -1,0 +1,26 @@
+name: GitHub Actions Build and Deploy Demo
+
+#触发条件
+on:
+  push:
+    branches:
+      - master
+#任务
+jobs:
+  build-and-deploy:
+    #服务器环境：最新版Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    #拉取代码
+    - name: Checkout
+      uses: actions/checkout@master
+      with:
+          persist-credentials: false
+    #生成静态文件
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: docs/.vuepress/dist/
+        BUILD_SCRIPT: pnpm install && pnpm run build
