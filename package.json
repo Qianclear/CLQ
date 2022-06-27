@@ -1,0 +1,22 @@
+{
+  "name": "vuepress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^2.0.0",
+    "commander": "^2.0.0",
+    "vue": "^2.0.0",
+    "esm": "^3.0.0",
+    "vue-class-component": "^7.2.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "dev": "vuepress dev docs . --open --host \"localhost\"", 
+    "build":"vuepress build docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
