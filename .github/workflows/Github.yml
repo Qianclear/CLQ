@@ -30,7 +30,7 @@ jobs:
             -name:Download Artifacts
               uses:actions/download-artifact@v1
                   with:
-                      name: site
+                      name: site 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
