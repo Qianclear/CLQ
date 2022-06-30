@@ -9,7 +9,7 @@ on:
 jobs:
   build-and-deploy:
     #服务器环境：最新版Ubuntu
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     #拉取代码
     - name: Checkout
@@ -18,19 +18,17 @@ jobs:
           persist-credentials: false
     #生成静态文件
     - name: Build
-        run: npm run build:docs
-
+      run: npm run build:docs
       # 部署到 GitHub Pages
-
         needs:[build]
         runs-on:ubuntu-latest
         steps:
-            -name: Checkout
-              use: actions/checkout@v3
-            -name:Download Artifacts
-              uses:actions/download-artifact@v1
-                  with:
-                      name: site 
+          - name: Checkout
+            use: actions/checkout@v3
+            # -name:Download Artifacts
+            #   uses:actions/download-artifact@v1
+            #       with:
+            #           name: site 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
