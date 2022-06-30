@@ -14,7 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1", 
     "dev": "vuepress dev docs . --open --host \"localhost\"", 
-    "build":"vuepress build docs"
+    "docs:build":"vuepress build docs"
   },
   "keywords": [],
   "author": "",
