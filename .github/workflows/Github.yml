@@ -22,13 +22,13 @@ jobs:
       # 部署到 GitHub Pages
         needs:[build]
         runs-on:ubuntu-latest
-        steps:
-          - name: Checkout
-            use: actions/checkout@v3
-            # -name:Download Artifacts
-            #   uses:actions/download-artifact@v1
-            #       with:
-            #           name: site 
+      steps:
+      - name: Checkout
+        use: actions/checkout@v3
+        # -name:Download Artifacts
+        #   uses:actions/download-artifact@v1
+        #       with:
+        #           name: site 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
