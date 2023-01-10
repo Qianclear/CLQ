@@ -1,5 +1,5 @@
-
-npm run build
+#npm run build
+vuepress build docs
 
 # 进入生成的文件夹
 cd .vuepress/dist
